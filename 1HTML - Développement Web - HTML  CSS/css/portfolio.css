@@ -243,7 +243,6 @@ h2:target:before{
 .icone img {
     width: 40px; 
     height: 40px;
-    transition: transform 0.3s;
 }
 
 .icone img:hover {
