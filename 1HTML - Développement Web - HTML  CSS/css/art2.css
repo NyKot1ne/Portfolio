@@ -1,0 +1,20 @@
+body {
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+p{
+    text-align: justify;
+}
+
+h2 {
+    color: #2c3e50;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+strong {
+    color: #34495e;
+}
+
