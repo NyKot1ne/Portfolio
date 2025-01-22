@@ -1,41 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
 
+:root {
+    --bg-color: rgba(251, 250, 250, 1);
+    --text-color: #000000;
+    --section-bg-color: #ffffff;
+    --nav-bg-color: #ffffff;
+    --accent-color: #7e1f1f;
+}
+
+.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --section-bg-color: #2c2c2c;
+    --nav-bg-color: #2c2c2c;
+    --accent-color: #ff8c00;
+}
 
 body {
-    background-color: var(--colors1 );
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-:root{
-    --colors1 : rgba(251, 250, 250,1);
-    --colorsheader: #4a4a4a; 
-    --colorsh2:#7e1f1f;
-    --colorsnav: #393838;
-    --colorsart: rgb(89, 75, 75);
+
+
+#theme-toggle {
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
 }
-
-
 /*Header*/
-
 header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color:var(--colorsheader);
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;    
 }
 
 .photo-profil{
     border-radius: 50%;
     border: 3px solid #fff;
 }
-
-#nom{
-    text-shadow: 5px 5px rgb(7, 7, 7);
-}
+#nom {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+;}
 
 /*Texte h*/
 
@@ -56,31 +70,35 @@ h3 {
 
 /*Menu navigation*/
 
-aside > nav {
-    background-color: #333;
+nav {
+    background-color: var(--nav-bg-color);
     padding: 10px;
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px;
-    margin: 0 10px;
+    border-radius: 5px;
 }
 
-nav :hover {
-    background-color: var(--colorsnav);
-    border-radius: 5px;
+nav a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
 }
 
 /*Paragraphe*/
 
 section {
-    padding: 20px;
-    margin: 10px 0;
-    background-color: #fff;
+    background-color: var(--section-bg-color);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
 }
 
 ul {
@@ -102,7 +120,8 @@ ul {
 
 .article-preview {
     margin-bottom: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--section-bg-color);
+    color: var(--text-color);
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -167,7 +186,6 @@ th {
     max-width: 100%;
     align-self: auto;
     text-align: center;
-    background-color: white
 }
 
 
@@ -186,6 +204,8 @@ input:required,:optional {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 input:checked{
@@ -209,12 +229,59 @@ form input[type="submit"]:hover {
     font-style: italic;
 }
 
+#projets-container .projet {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+  
+#pagination {
+    margin-top: 10px;
+  }
+  
+#pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+#pagination button.active {
+    font-weight: bold;
+  }
+
+#livre-dor {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+#livre-dor .commentaire {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+#livre-dor .commentaire h4 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+  }
+  
+#livre-dor .commentaire p {
+    margin: 0 0 5px;
+  }
+  
+
+  
+
 /*Footer*/
 
 footer {
     padding: 30px;
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
     position: relative;
 }
 
@@ -223,7 +290,7 @@ footer {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 
 
