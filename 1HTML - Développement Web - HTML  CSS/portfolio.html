@@ -6,33 +6,41 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="icon" href="images/photo-profil.jpg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
+
+
 </head>
   
 <body>
 
   <!--  <p> Header  </p> -->
     
-   <header class="header" style="display: flex;flex-direction: row;">
-    <div>
-        <img class="photo-profil" src="./images/photo-profil.jpg" width="30%" height ="100%" alt="photo de profil de Thierry Pascal"/>
-    </div>
-    <div> 
-        <h1 id="nom">Thierry Pascal</h1>
-    </div>
+  <header class="header" style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center;">
+        <img class="photo-profil" src="./images/photo-profil.jpg" width="30%" height="100%" alt="photo de profil de Thierry Pascal"/>
+    </div>   
+    <div><h1 id="nom">Thierry Pascal</h1></div> 
 
-   </header> 
+    <div style="position: absolute; top: 10px; right: 10px; display: flex; align-items: center; gap: 10px;">
+      <button id="theme-toggle" aria-label="Changer de thème" style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">🌞</button>
+  </div>
+  </header>
+  <script src="script.js"></script>
 
-<!--  <p> Aside avec menu nav  </p> -->
+<!--  <p> menu nav  </p> -->
 
-   <aside>
-      <nav>
+  <aside>
+    <nav>
       <a href="#contact" style="text-decoration: none;">Contact</a>
-      <a href ="#a-propos"style="text-decoration: none;">À propos</a>
-      <a href ="#articles"style="text-decoration: none;">Articles</a>
-      <a href = "#cv"style="text-decoration: none;">CV</a>
-      <a href ="#form"style="text-decoration: none;">Formulaire</a>
-      </nav>
-    </aside>
+      <a href="#a-propos" style="text-decoration: none;">À propos</a>
+      <a href="#articles" style="text-decoration: none;">Articles</a>
+      <a href="#cv" style="text-decoration: none;">CV</a>
+      <a href="#form" style="text-decoration: none;">Formulaire</a>
+    </nav>
+  </aside>
+
 
    <!--  <p> Contact   </p> -->
 
@@ -44,6 +52,29 @@
     <p><strong>Localisation</strong> : Limoges</p>
 
   </section> 
+
+  <section id="projets">
+    <h2>Mes Projets</h2>
+    <div id="recherche">
+      <input type="text" id="searchBar" placeholder="Rechercher un projet..." />
+      <select id="filterCategory">
+        <option value="all">Toutes les catégories</option>
+        <option value="Web">Web</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Data Science">Data Science</option>
+      </select>
+      <button id="sortNewest">Trier par Date (Plus Récent)</button>
+      <button id="sortOldest">Trier par Date (Plus Ancien)</button>
+    </div>
+    <div id="projets-container"></div>
+    <div id="pagination"></div>
+  </section>
+
+  <section id="livre-dor">
+    <h2>Livre d'or</h2>
+    <div id="comments-container"></div>
+  </section>
+  
 
   <!--  <p> A Propos  </p> -->
 
@@ -188,7 +219,6 @@
   <section>  
     <h2 id ="form">Formulaire de contact</h2>
     <form action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
-
       <input type="hidden" name="access_key" value="4d172bf8-4813-4ff8-90cd-45583adbbed6">
       <div>
         <label for="name"> Nom : </label>
@@ -268,24 +298,34 @@
     </form>
   </section>
 
+  <section id="notes-section">
+    <h2>Notes</h2>
+    <textarea id="note-input" rows="5" cols="50" placeholder="Écrivez vos notes ici..."></textarea>
+    <br>
+    <button id="save-note">Sauvegarder la note</button>
+  </section>
+
+
+
+
   <!--  <p> FOOTER  </p> -->
 
   <footer>
 
     <div class="icone">
       <a href="https://www.facebook.com" target="_blank">
-          <img src="facebook-brands-solid2.svg" alt="Facebook">
+          <img src="reseaux/facebook-brands-solid2.svg" alt="Facebook">
       </a>
 
       <a href="https://x.com/" target="_blank">
-          <img src="x-twitter-brands-solid.svg" alt="X">
+          <img src="reseaux/x-twitter-brands-solid.svg" alt="X">
       </a>
       <a href="https://www.instagram.com" target="_blank">
-          <img src="instagram-brands-solid.svg" alt="Instagram">
+          <img src="reseaux/instagram-brands-solid.svg" alt="Instagram">
       </a>
 
       <a href="https://www.linkedin.com" target="_blank">
-          <img src="linkedin-brands-solid.svg" alt="LinkedIn">
+          <img src="reseaux/linkedin-brands-solid.svg" alt="LinkedIn">
       </a>
     </div>
     <a href="#" class="top">Retour en haut</a>
